@@ -1,27 +1,83 @@
 import React from "react";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import banner1 from "../assets/img/10001.jpg";
-import banner2 from "../assets/img/10005.png";
+import banner5 from "../assets/img/10005.png";
+import banner2 from "../assets/img/10006.png";
+import banner3 from "../assets/img/10007.png";
+import banner4 from "../assets/img/10008.png";
+import banner8 from "../assets/img/10009.png";
+import banner6 from "../assets/img/10010.png";
+import banner7 from "../assets/img/10011.png";
 import Filmb1 from "../assets/img/banner1.jpg";
 import Filmb2 from "../assets/img/banner2.jpg";
 import Filmb3 from "../assets/img/banner3.jpg";
 import Filmb4 from "../assets/img/banner4.jpg";
 
-
 export default function Home() {
   return (
     <>
-
       {/* Carousel Start */}
-      <div className="container-fluid p-0 mb-5">
-        <div
-          id="blog-carousel"
-          className="carousel slide overlay-bottom"
-          data-ride="carousel"
+      <div className="w-100" style={{ marginBottom: "3rem" }}>
+        <Carousel
+          showThumbs={false}
+          showStatus={false}
+          infiniteLoop
+          autoPlay
+          interval={4000}
+          stopOnHover
+          swipeable
+          emulateTouch
+          renderIndicator={(onClickHandler, isSelected, index, label) => {
+            const style = {
+              marginLeft: 6,
+              color: isSelected ? "#007bff" : "#fff",
+              cursor: "pointer",
+            };
+            return (
+              <span
+                style={style}
+                onClick={onClickHandler}
+                onKeyDown={onClickHandler}
+                key={index}
+                role="button"
+                tabIndex={0}
+                aria-label={`${label} ${index + 1}`}
+              >
+                ●
+              </span>
+            );
+          }}
         >
-          <div className="carousel-inner">
-            <div className="carousel-item active">
-              <img className="w-100" src={banner1} alt="Image" />
-              <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
+          {[banner1, banner5, banner2, banner3, banner4].map((banner, idx) => (
+            <div
+              key={idx}
+              style={{
+                width: "100vw",
+                height: "100vh",
+                position: "relative",
+              }}
+            >
+              <img
+                src={banner}
+                alt={`Slide ${idx + 1}`}
+                style={{
+                  width: "100vw",
+                  height: "100vh",
+                  objectFit: "cover",
+                }}
+              />
+              <div
+                className="carousel-caption d-flex flex-column align-items-center justify-content-center"
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  background: "rgba(0,0,0,0.3)",
+                }}
+              >
                 <h2 className="text-primary font-weight-medium m-0">
                   We Have Been Serving
                 </h2>
@@ -29,32 +85,8 @@ export default function Home() {
                 <h2 className="text-white m-0">* SINCE 2000 *</h2>
               </div>
             </div>
-            <div className="carousel-item">
-              <img className="w-100" src={banner2} alt="Image" />
-              <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                <h2 className="text-primary font-weight-medium m-0">
-                  We Have Been Serving
-                </h2>
-                <h1 className="display-1 text-white m-0">Film</h1>
-                <h2 className="text-white m-0">* SINCE 2000 *</h2>
-              </div>
-            </div>
-          </div>
-          <a
-            className="carousel-control-prev"
-            href="#blog-carousel"
-            data-slide="prev"
-          >
-            <span className="carousel-control-prev-icon"></span>
-          </a>
-          <a
-            className="carousel-control-next"
-            href="#blog-carousel"
-            data-slide="next"
-          >
-            <span className="carousel-control-next-icon"></span>
-          </a>
-        </div>
+          ))}
+        </Carousel>
       </div>
       {/* Carousel End */}
 
@@ -74,14 +106,15 @@ export default function Home() {
             <div className="col-lg-4 py-0 py-lg-5">
               <h1 className="mb-3">Our Story</h1>
               <h5 className="mb-3">
-                Eos kasd eos dolor vero vero, lorem stet diam rebum. Ipsum amet
-                sed vero dolor sea
+                We create films, commercials, and digital stories connect with
+                audiences worldwide.
               </h5>
               <p>
-                Takimata sed vero vero no sit sed, justo clita duo no duo amet
-                et, nonumy kasd sed dolor eos diam lorem eirmod. Amet sit amet
-                amet no. Est nonumy sed labore eirmod sit magna. Erat at est
-                justo sit ut. Labor diam sed ipsum et eirmod
+                At Makbel Film Production, we believe in the power of
+                storytelling to inspire, connect, and transform. We are a
+                creative production house specializing in film, television,
+                commercials, and digital content, with a mission to bring bold
+                ideas to life on screen.
               </p>
               <a
                 href=""
@@ -106,22 +139,22 @@ export default function Home() {
             <div className="col-lg-4 py-0 py-lg-5">
               <h1 className="mb-3">Our Vision</h1>
               <p>
-                Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo
-                dolor lorem ipsum ut sed eos, ipsum et dolor kasd sit ea justo.
-                Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est
-                dolor
+                Our journey continues to be fueled by curiosity, creativity, and
+                a relentless dedication to craft. At Makbel Film Production,
+                every project is a chance to push boundaries, explore new ideas,
+                and bring powerful stories to life.
               </p>
               <h5 className="mb-3">
-                <i className="fa fa-check text-primary mr-3"></i>Lorem ipsum
-                dolor sit amet
+                <i className="fa fa-check text-primary mr-3"></i>Our journey is
+                driven by curiosity,
               </h5>
               <h5 className="mb-3">
-                <i className="fa fa-check text-primary mr-3"></i>Lorem ipsum
-                dolor sit amet
+                <i className="fa fa-check text-primary mr-3"></i>craft, and the
+                belief
               </h5>
               <h5 className="mb-3">
-                <i className="fa fa-check text-primary mr-3"></i>Lorem ipsum
-                dolor sit amet
+                <i className="fa fa-check text-primary mr-3"></i>that every
+                story deserves to be told.
               </h5>
               <a
                 href=""
@@ -150,17 +183,12 @@ export default function Home() {
           <div className="row">
             {/* Service Items */}
             {[1, 2, 3, 4].map((i) => {
-              const icons = [
-                "fa-truck",
-                "fa-coffee",
-                "fa-award",
-                "fa-table",
-              ];
+              const icons = ["fa-truck", "fa-coffee", "fa-award", "fa-table"];
               const titles = [
-                "Fastest Door Delivery",
-                "Fresh Coffee Beans",
-                "Best Quality Coffee",
-                "Online Table Booking",
+                "Commercials & Brand Films",
+                "Music Videos",
+                "Documentaries",
+                "Post-Production",
               ];
               return (
                 <div className="col-lg-6 mb-5" key={i}>
@@ -178,9 +206,9 @@ export default function Home() {
                         {titles[i - 1]}
                       </h4>
                       <p className="m-0">
-                        Sit lorem ipsum et diam elitr est dolor sed duo. Guberg
-                        sea et et lorem dolor sed est sit invidunt, dolore
-                        tempor diam ipsum takima erat tempor
+                        From concept to post-production, Makbel Film Production
+                        delivers visually powerful stories that connect with
+                        audiences.
                       </p>
                     </div>
                   </div>
@@ -195,25 +223,26 @@ export default function Home() {
       {/* Offer Start */}
       <div className="offer container-fluid my-5 py-5 text-center position-relative overlay-top overlay-bottom">
         <div className="container py-5">
-          <h1 className="display-3 text-primary mt-3">50% OFF</h1>
-          <h1 className="text-white mb-3">Sunday Special Offer</h1>
+          <h1 className="display-3 text-primary mt-3">Join Our Filmmaker Community</h1>
+          <h1 className="text-white mb-3">Exclusive Access for Subscribers</h1>
           <h4 className="text-white font-weight-normal mb-4 pb-3">
-            Only for Sunday from 1st Jan to 30th Jan 2045
+            Subscribe now for behind-the-scenes content, early film releases, and special event invites from Makbel Film Production.
           </h4>
           <form className="form-inline justify-content-center mb-4">
             <div className="input-group">
               <input
-                type="text"
+                type="email"
                 className="form-control p-4"
                 placeholder="Your Email"
                 style={{ height: "60px" }}
+                required
               />
               <div className="input-group-append">
                 <button
                   className="btn btn-primary font-weight-bold px-4"
                   type="submit"
                 >
-                  Sign Up
+                  Subscribe
                 </button>
               </div>
             </div>
@@ -230,68 +259,74 @@ export default function Home() {
               className="text-primary text-uppercase"
               style={{ letterSpacing: "5px" }}
             >
-              Menu &amp; Pricing
+              Production Packages
             </h4>
-            <h1 className="display-4">Competitive Pricing</h1>
+            <h1 className="display-4">Our Film Services & Pricing</h1>
           </div>
           <div className="row">
-            {/* Hot Coffee */}
+            {/* Short Films */}
             <div className="col-lg-6">
-              <h1 className="mb-5">Hot Coffee</h1>
+              <h1 className="mb-5">Short Film Packages</h1>
               {[1, 2, 3].map((i) => {
                 const names = [
-                  "Black Coffee",
-                  "Chocolete Coffee",
-                  "Coffee With Milk",
+                  "Basic Short Film",
+                  "Premium Short Film",
+                  "Documentary Short",
                 ];
-                const prices = ["$5", "$7", "$9"];
+                const prices = ["1.5k", "3k", "2.5k"];
+                const descriptions = [
+                  "Up to 5 minutes, 1 location, basic editing.",
+                  "Up to 15 minutes, multiple locations, advanced editing, color grading.",
+                  "Up to 10 minutes, interviews, voiceover, and b-roll.",
+                ];
+                const images = [banner6, banner7, banner8];
                 return (
                   <div className="row align-items-center mb-5" key={i}>
                     <div className="col-4 col-sm-3">
                       <img
                         className="w-100 rounded-circle mb-3 mb-sm-0"
-                        src={`img/menu-${i}.jpg`}
-                        alt=""
+                        src={images[i - 1]}
+                        alt={names[i - 1]}
                       />
                       <h5 className="menu-price">{prices[i - 1]}</h5>
                     </div>
                     <div className="col-8 col-sm-9">
                       <h4>{names[i - 1]}</h4>
-                      <p className="m-0">
-                        Sit lorem ipsum et diam elitr est dolor sed duo guberg
-                        sea et et lorem dolor
-                      </p>
+                      <p className="m-0">{descriptions[i - 1]}</p>
                     </div>
                   </div>
                 );
               })}
             </div>
-            {/* Cold Coffee */}
+            {/* Commercials */}
             <div className="col-lg-6">
-              <h1 className="mb-5">Cold Coffee</h1>
+              <h1 className="mb-5">Commercial & Music Video Packages</h1>
               {[1, 2, 3].map((i) => {
                 const names = [
-                  "Black Coffee",
-                  "Chocolete Coffee",
-                  "Coffee With Milk",
+                  "Brand Commercial",
+                  "Music Video",
+                  "Social Media Promo",
                 ];
-                const prices = ["$5", "$7", "$9"];
+                const prices = ["1.5k", "3k", "2.5k"];
+                const descriptions = [
+                  "30-60 seconds, script, filming, and editing.",
+                  "Creative direction, multiple locations, professional editing.",
+                  "Up to 1 minute, vertical/horizontal formats, fast turnaround.",
+                ];
+                const images = [banner6, banner7, banner8];
                 return (
                   <div className="row align-items-center mb-5" key={i}>
                     <div className="col-4 col-sm-3">
                       <img
                         className="w-100 rounded-circle mb-3 mb-sm-0"
-                        src={`img/menu-${i}.jpg`}
-                        alt=""
+                        src={images[i - 1]}
+                        alt={names[i - 1]}
                       />
                       <h5 className="menu-price">{prices[i - 1]}</h5>
                     </div>
                     <div className="col-8 col-sm-9">
                       <h4>{names[i - 1]}</h4>
-                      <p className="m-0">
-                        Sit lorem ipsum et diam elitr est dolor sed duo guberg
-                        sea et et lorem dolor
-                      </p>
+                      <p className="m-0">{descriptions[i - 1]}</p>
                     </div>
                   </div>
                 );
@@ -310,26 +345,23 @@ export default function Home() {
               <div className="col-lg-6 my-5 my-lg-0">
                 <div className="p-5">
                   <div className="mb-4">
-                    <h1 className="display-3 text-primary">30% OFF</h1>
-                    <h1 className="text-white">For Online Reservation</h1>
+                    <h1 className="display-3 text-primary">
+                      Request a Project Quote
+                    </h1>
+                    <h1 className="text-white">Start Your Film Journey</h1>
                   </div>
                   <p className="text-white">
-                    Lorem justo clita erat lorem labore ea, justo dolor lorem
-                    ipsum ut sed eos, ipsum et dolor kasd sit ea justo. Erat
-                    justo sed sed diam. Ea et erat ut sed diam sea
+                    Ready to bring your story to life? Fill out the form to request a quote for your film, commercial, or music video project with Makbel Film Production. Our team will contact you to discuss your vision and provide a tailored proposal.
                   </p>
                   <ul className="list-inline text-white m-0">
                     <li className="py-2">
-                      <i className="fa fa-check text-primary mr-3"></i>Lorem
-                      ipsum dolor sit amet
+                      <i className="fa fa-check text-primary mr-3"></i>Custom packages for every budget
                     </li>
                     <li className="py-2">
-                      <i className="fa fa-check text-primary mr-3"></i>Lorem
-                      ipsum dolor sit amet
+                      <i className="fa fa-check text-primary mr-3"></i>Professional production team
                     </li>
                     <li className="py-2">
-                      <i className="fa fa-check text-primary mr-3"></i>Lorem
-                      ipsum dolor sit amet
+                      <i className="fa fa-check text-primary mr-3"></i>Fast response & creative support
                     </li>
                   </ul>
                 </div>
@@ -339,13 +371,13 @@ export default function Home() {
                   className="text-center p-5"
                   style={{ background: "rgba(51, 33, 29, .8)" }}
                 >
-                  <h1 className="text-white mb-4 mt-5">Book Your Table</h1>
+                  <h1 className="text-white mb-4 mt-5">Request a Quote</h1>
                   <form className="mb-5">
                     <div className="form-group">
                       <input
                         type="text"
                         className="form-control bg-transparent border-primary p-4"
-                        placeholder="Name"
+                        placeholder="Your Name"
                         required
                       />
                     </div>
@@ -353,51 +385,38 @@ export default function Home() {
                       <input
                         type="email"
                         className="form-control bg-transparent border-primary p-4"
-                        placeholder="Email"
+                        placeholder="Your Email"
                         required
                       />
                     </div>
                     <div className="form-group">
-                      <div className="date" id="date" data-target-input="nearest">
-                        <input
-                          type="text"
-                          className="form-control bg-transparent border-primary p-4 datetimepicker-input"
-                          placeholder="Date"
-                          data-target="#date"
-                          data-toggle="datetimepicker"
-                        />
-                      </div>
+                      <input
+                        type="text"
+                        className="form-control bg-transparent border-primary p-4"
+                        placeholder="Project Type (e.g. Short Film, Commercial)"
+                        required
+                      />
                     </div>
                     <div className="form-group">
-                      <div className="time" id="time" data-target-input="nearest">
-                        <input
-                          type="text"
-                          className="form-control bg-transparent border-primary p-4 datetimepicker-input"
-                          placeholder="Time"
-                          data-target="#time"
-                          data-toggle="datetimepicker"
-                        />
-                      </div>
+                      <input
+                        type="text"
+                        className="form-control bg-transparent border-primary p-4"
+                        placeholder="Estimated Budget"
+                      />
                     </div>
                     <div className="form-group">
-                      <select
-                        className="custom-select bg-transparent border-primary px-4"
-                        style={{ height: "49px" }}
-                        defaultValue="Person"
-                      >
-                        <option>Person</option>
-                        <option value="1">Person 1</option>
-                        <option value="2">Person 2</option>
-                        <option value="3">Person 3</option>
-                        <option value="4">Person 4</option>
-                      </select>
+                      <textarea
+                        className="form-control bg-transparent border-primary p-4"
+                        placeholder="Tell us about your project"
+                        rows={3}
+                      />
                     </div>
                     <div>
                       <button
                         className="btn btn-primary btn-block font-weight-bold py-3"
                         type="submit"
                       >
-                        Book Now
+                        Send Request
                       </button>
                     </div>
                   </form>
@@ -417,158 +436,60 @@ export default function Home() {
               className="text-primary text-uppercase"
               style={{ letterSpacing: "5px" }}
             >
-              Testimonial
+              Testimonials
             </h4>
-            <h1 className="display-4">Our Clients Say</h1>
+            <h1 className="display-4">What Our Clients Say</h1>
           </div>
           <div className="owl-carousel testimonial-carousel">
-            {[1, 2, 3, 4].map((i) => (
+            {[
+              {
+                name: "Sarah Abera",
+                profession: "Director, 123 Films",
+                img: "img/testimonial-1.jpg",
+                text:
+                  "Makbel Film Production brought our vision to life with creativity and professionalism. Their team made the entire process seamless and enjoyable.",
+              },
+              {
+                name: "dawit Kebede",
+                profession: "Marketing Manager, BrandX",
+                img: "img/testimonial-2.jpg",
+                text:
+                  "The commercial Makbel produced for us exceeded expectations. The storytelling and visuals truly captured our brand’s message.",
+              },
+              {
+                name: "Alem Yilma",
+                profession: "Musician & Artist",
+                img: "img/testimonial-3.jpg",
+                text:
+                  "My music video was a dream come true! The Makbel crew was innovative, supportive, and delivered a stunning final product.",
+              },
+              {
+                name: "Omar Sayed",
+                profession: "Documentary Producer",
+                img: "img/testimonial-4.jpg",
+                text:
+                  "Working with Makbel Film Production was a fantastic experience. Their attention to detail and passion for storytelling is unmatched.",
+              },
+            ].map((testimonial, i) => (
               <div className="testimonial-item" key={i}>
                 <div className="d-flex align-items-center mb-3">
                   <img
                     className="img-fluid"
-                    src={`img/testimonial-${i}.jpg`}
-                    alt=""
+                    src={testimonial.img}
+                    alt={testimonial.name}
                   />
                   <div className="ml-3">
-                    <h4>Client Name</h4>
-                    <i>Profession</i>
+                    <h4>{testimonial.name}</h4>
+                    <i>{testimonial.profession}</i>
                   </div>
                 </div>
-                <p className="m-0">
-                  Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr
-                  eirmod clita lorem. Dolor tempor ipsum sanct clita
-                </p>
+                <p className="m-0">{testimonial.text}</p>
               </div>
             ))}
           </div>
         </div>
       </div>
       {/* Testimonial End */}
-
-      {/* Footer Start */}
-      <div className="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top">
-        <div className="row mx-0 pt-5 px-sm-3 px-lg-5 mt-4">
-          <div className="col-lg-3 col-md-6 mb-5">
-            <h4
-              className="text-white text-uppercase mb-4"
-              style={{ letterSpacing: "3px" }}
-            >
-              Get In Touch
-            </h4>
-            <p>
-              <i className="fa fa-map-marker-alt mr-2"></i>123 Street, New York,
-              USA
-            </p>
-            <p>
-              <i className="fa fa-phone-alt mr-2"></i>+012 345 67890
-            </p>
-            <p className="m-0">
-              <i className="fa fa-envelope mr-2"></i>info@example.com
-            </p>
-          </div>
-          <div className="col-lg-3 col-md-6 mb-5">
-            <h4
-              className="text-white text-uppercase mb-4"
-              style={{ letterSpacing: "3px" }}
-            >
-              Follow Us
-            </h4>
-            <p>
-              Amet elitr vero magna sed ipsum sit kasd sea elitr lorem rebum
-            </p>
-            <div className="d-flex justify-content-start">
-              <a
-                className="btn btn-lg btn-outline-light btn-lg-square mr-2"
-                href="#"
-              >
-                <i className="fab fa-twitter"></i>
-              </a>
-              <a
-                className="btn btn-lg btn-outline-light btn-lg-square mr-2"
-                href="#"
-              >
-                <i className="fab fa-facebook-f"></i>
-              </a>
-              <a
-                className="btn btn-lg btn-outline-light btn-lg-square mr-2"
-                href="#"
-              >
-                <i className="fab fa-linkedin-in"></i>
-              </a>
-              <a
-                className="btn btn-lg btn-outline-light btn-lg-square"
-                href="#"
-              >
-                <i className="fab fa-instagram"></i>
-              </a>
-            </div>
-          </div>
-          <div className="col-lg-3 col-md-6 mb-5">
-            <h4
-              className="text-white text-uppercase mb-4"
-              style={{ letterSpacing: "3px" }}
-            >
-              Open Hours
-            </h4>
-            <div>
-              <h6 className="text-white text-uppercase">Monday - Friday</h6>
-              <p>8.00 AM - 8.00 PM</p>
-              <h6 className="text-white text-uppercase">Saturday - Sunday</h6>
-              <p>2.00 PM - 8.00 PM</p>
-            </div>
-          </div>
-          <div className="col-lg-3 col-md-6 mb-5">
-            <h4
-              className="text-white text-uppercase mb-4"
-              style={{ letterSpacing: "3px" }}
-            >
-              Newsletter
-            </h4>
-            <p>
-              Amet elitr vero magna sed ipsum sit kasd sea elitr lorem rebum
-            </p>
-            <div className="w-100">
-              <div className="input-group">
-                <input
-                  type="text"
-                  className="form-control border-light"
-                  style={{ padding: "25px" }}
-                  placeholder="Your Email"
-                />
-                <div className="input-group-append">
-                  <button className="btn btn-primary font-weight-bold px-3">
-                    Sign Up
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          className="container-fluid text-center text-white border-top mt-4 py-4 px-sm-3 px-md-5"
-          style={{ borderColor: "rgba(256, 256, 256, .1)" }}
-        >
-          <p className="mb-2 text-white">
-            Copyright &copy;{" "}
-            <a className="font-weight-bold" href="#">
-              Domain
-            </a>
-            . All Rights Reserved.
-          </p>
-          <p className="m-0 text-white">
-            Designed by{" "}
-            <a className="font-weight-bold" href="https://htmlcodex.com">
-              HTML Codex
-            </a>{" "}
-            Distributed by{" "}
-            <a href="https://themewagon.com" target="_blank" rel="noopener noreferrer">
-              ThemeWagon
-            </a>
-          </p>
-        </div>
-      </div>
-      {/* Footer End */}
 
       {/* Back to Top */}
       <a href="#" className="btn btn-lg btn-primary btn-lg-square back-to-top">

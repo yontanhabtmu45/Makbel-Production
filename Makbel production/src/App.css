@@ -9652,3 +9652,10 @@ h6,
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+/* CUSTOM CSS */
+
+.logo{
+  height: 80px;
+  width: auto;
+}

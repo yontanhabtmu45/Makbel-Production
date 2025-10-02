@@ -1,6 +1,6 @@
 import './App.css'
 import Header from './components/Header'
-import Contact from './pages/Contact'
+import Footer from './components/Footer'
 import Home from './pages/Home'
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <>
     <Header/>
     <Home/>
-    {/* <Contact/> */}
+    <Footer/>
     </>
   )
 }
