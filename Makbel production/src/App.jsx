@@ -6,21 +6,23 @@ import About from './pages/about'
 import Service from './pages/Services'
 import Contact from './pages/Contact'
 import Portfolio from './pages/Portfolio'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import MovieDetails from "./pages/MovieDetails";
+import MovieDetails from "./pages/MovieDetails"
+import { Routes, Route } from "react-router-dom";
 
 function App() {
-
   return (
-    <BrowserRouter>
-    <Header/>
-    <Routes>
+    <>
+      <Header/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/service" element={<Service />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/portfolio/:id" element={<MovieDetails />} />
-        {/* ...other routes... */}
+        <Route path="/contact" element={<Contact />} />
       </Routes>
-    <Footer/>
-    </BrowserRouter>
+      <Footer/>
+    </>
   )
 }
 
