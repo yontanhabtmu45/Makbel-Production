@@ -1,6 +1,9 @@
 import React from 'react'
 
 function Footer() {
+  // Use your logo color or brand color for icons
+  const logoColor = "#C29D59";
+
   return (
     <>
     {/* Footer Start */}
@@ -17,7 +20,7 @@ function Footer() {
               <i className="fa fa-map-marker-alt mr-2"></i>Ayer Tena, Addis Ababa, Ethiopia
             </p>
             <p>
-              <i className="fa fa-phone-alt mr-2"></i>+251 940 136 911
+              <i className="fa fa-phone-alt mr-2"></i>+251 987 654 321
             </p>
             <p className="m-0">
               <i className="fa fa-envelope mr-2"></i>info@makbelproduction.com
@@ -35,36 +38,84 @@ function Footer() {
             </p>
             <div className="d-flex justify-content-start">
               <a
-                className="btn btn-lg btn-outline-light btn-lg-square mr-2"
+                className="btn btn-lg btn-lg-square mr-2"
                 href="https://twitter.com/"
                 target="_blank"
                 rel="noopener noreferrer"
+                style={{
+                  background: "#fff",
+                  border: "none",
+                  color: 'black',
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: 48,
+                  height: 48,
+                  borderRadius: "50%",
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.08)"
+                }}
               >
-                <i className="fab fa-twitter"></i>
+                <i className="fab fa-twitter" style={{ color: logoColor, fontSize: 22 }}></i>
               </a>
               <a
-                className="btn btn-lg btn-outline-light btn-lg-square mr-2"
+                className="btn btn-lg btn-lg-square mr-2"
                 href="https://facebook.com/"
                 target="_blank"
                 rel="noopener noreferrer"
+                style={{
+                  background: "#fff",
+                  border: "none",
+                  color: logoColor,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: 48,
+                  height: 48,
+                  borderRadius: "50%",
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.08)"
+                }}
               >
-                <i className="fab fa-facebook-f"></i>
+                <i className="fab fa-facebook-f" style={{ color: logoColor, fontSize: 22 }}></i>
               </a>
               <a
-                className="btn btn-lg btn-outline-light btn-lg-square mr-2"
+                className="btn btn-lg btn-lg-square mr-2"
                 href="https://linkedin.com/"
                 target="_blank"
                 rel="noopener noreferrer"
+                style={{
+                  background: "#fff",
+                  border: "none",
+                  color: logoColor,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: 48,
+                  height: 48,
+                  borderRadius: "50%",
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.08)"
+                }}
               >
-                <i className="fab fa-linkedin-in"></i>
+                <i className="fab fa-linkedin-in" style={{ color: logoColor, fontSize: 22 }}></i>
               </a>
               <a
-                className="btn btn-lg btn-outline-light btn-lg-square"
+                className="btn btn-lg btn-lg-square"
                 href="https://instagram.com/"
                 target="_blank"
                 rel="noopener noreferrer"
+                style={{
+                  background: "#fff",
+                  border: "none",
+                  color: logoColor,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: 48,
+                  height: 48,
+                  borderRadius: "50%",
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.08)"
+                }}
               >
-                <i className="fab fa-instagram"></i>
+                <i className="fab fa-instagram" style={{ color: logoColor, fontSize: 22 }}></i>
               </a>
             </div>
           </div>
@@ -82,32 +133,6 @@ function Footer() {
               <p>2.00 PM - 8.00 PM</p>
             </div>
           </div>
-          {/* <div className="col-lg-3 col-md-6 mb-5">
-            <h4
-              className="text-white text-uppercase mb-4"
-              style={{ letterSpacing: "3px" }}
-            >
-              Newsletter
-            </h4>
-            <p>
-              Subscribe to our newsletter for exclusive updates, film releases, and special offers from Makbel Film Production.
-            </p>
-            <div className="w-100">
-              <div className="input-group">
-                <input
-                  type="email"
-                  className="form-control border-light"
-                  style={{ padding: "25px" }}
-                  placeholder="Your Email"
-                />
-                <div className="input-group-append">
-                  <button className="btn btn-primary font-weight-bold px-3">
-                    Sign Up
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div> */}
         </div>
         <div
           className="container-fluid text-center text-white border-top mt-4 py-4 px-sm-3 px-md-5"

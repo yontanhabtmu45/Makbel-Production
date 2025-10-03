@@ -42,30 +42,9 @@ function Header() {
               <a href="service.html" className="nav-item nav-link">
                 Service
               </a>
-              <div
-                className={`nav-item dropdown${dropdownOpen ? ' show' : ''}`}
-                onMouseLeave={closeDropdown}
-              >
-                <a
-                  href="#"
-                  className="nav-link dropdown-toggle"
-                  onClick={handleDropdown}
-                  aria-haspopup="true"
-                  aria-expanded={dropdownOpen}
-                >
-                  Pages
-                </a>
-                <div
-                  className={`dropdown-menu text-capitalize${dropdownOpen ? ' show' : ''}`}
-                >
-                  <a href="reservation.html" className="dropdown-item" onClick={closeDropdown}>
-                    Reservation
-                  </a>
-                  <a href="testimonial.html" className="dropdown-item" onClick={closeDropdown}>
-                    Testimonial
-                  </a>
-                </div>
-              </div>
+              <a href="Portfolio.html" className="nav-item nav-link">
+                Portfolio
+              </a>
               <a href="contact.html" className="nav-item nav-link">
                 Contact
               </a>

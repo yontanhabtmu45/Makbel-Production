@@ -13,6 +13,10 @@ import Filmb1 from "../assets/img/banner1.jpg";
 import Filmb2 from "../assets/img/banner2.jpg";
 import Filmb3 from "../assets/img/banner3.jpg";
 import Filmb4 from "../assets/img/banner4.jpg";
+import test1 from "../assets/img/Testimonial1.jfif"
+import test2 from "../assets/img/Testimonial2.jfif"
+import test3 from "../assets/img/Testimonial3.jfif"
+import test4 from "../assets/img/Testimonial4.jfif"
 
 export default function Home() {
   return (
@@ -445,28 +449,28 @@ export default function Home() {
               {
                 name: "Sarah Abera",
                 profession: "Director, 123 Films",
-                img: "img/testimonial-1.jpg",
+                img: test1,
                 text:
                   "Makbel Film Production brought our vision to life with creativity and professionalism. Their team made the entire process seamless and enjoyable.",
               },
               {
                 name: "dawit Kebede",
                 profession: "Marketing Manager, BrandX",
-                img: "img/testimonial-2.jpg",
+                img: test2,
                 text:
                   "The commercial Makbel produced for us exceeded expectations. The storytelling and visuals truly captured our brand’s message.",
               },
               {
                 name: "Alem Yilma",
                 profession: "Musician & Artist",
-                img: "img/testimonial-3.jpg",
+                img: test3,
                 text:
                   "My music video was a dream come true! The Makbel crew was innovative, supportive, and delivered a stunning final product.",
               },
               {
                 name: "Omar Sayed",
                 profession: "Documentary Producer",
-                img: "img/testimonial-4.jpg",
+                img: test4,
                 text:
                   "Working with Makbel Film Production was a fantastic experience. Their attention to detail and passion for storytelling is unmatched.",
               },
@@ -477,6 +481,15 @@ export default function Home() {
                     className="img-fluid"
                     src={testimonial.img}
                     alt={testimonial.name}
+                    style={{
+                      width: 80,
+                      height: 80,
+                      objectFit: "cover",
+                      border: "4px solid #DA9F5B",
+                      background: "#fff",
+                      filter: "blur(4px)", 
+                      transition: "filter 0.3s"
+                    }}
                   />
                   <div className="ml-3">
                     <h4>{testimonial.name}</h4>

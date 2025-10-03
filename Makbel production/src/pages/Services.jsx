@@ -1,64 +1,40 @@
 import React from "react";
+import Filmb1 from "../assets/img/banner1.jpg";
+import Filmb2 from "../assets/img/banner2.jpg";
+import Filmb3 from "../assets/img/banner3.jpg";
+import Filmb4 from "../assets/img/banner4.jpg";
 
 export default function Service() {
+  const logoColor = "#C29D59";
+  const services = [
+    {
+      icon: "fa-film",
+      title: "Commercials & Brand Films",
+      img: Filmb1,
+      desc: "From concept to post-production, we deliver visually powerful commercials and brand films that connect with audiences.",
+    },
+    {
+      icon: "fa-music",
+      title: "Music Videos",
+      img: Filmb2,
+      desc: "Creative direction, multiple locations, and professional editing for artists and labels seeking standout music videos.",
+    },
+    {
+      icon: "fa-video",
+      title: "Documentaries",
+      img: Filmb3,
+      desc: "We craft compelling documentaries with interviews, voiceover, and b-roll to tell real stories that matter.",
+    },
+    {
+      icon: "fa-edit",
+      title: "Post-Production",
+      img: Filmb4,
+      desc: "Advanced editing, color grading, sound design, and visual effects to bring your project to life.",
+    },
+  ];
+
   return (
     <>
-      {/* Navbar Start */}
-      <div className="container-fluid p-0 nav-bar">
-        <nav className="navbar navbar-expand-lg bg-none navbar-dark py-3">
-          <a href="index.html" className="navbar-brand px-lg-4 m-0">
-            <h1 className="m-0 display-4 text-uppercase text-white">KOPPEE</h1>
-          </a>
-          <button
-            type="button"
-            className="navbar-toggler"
-            data-toggle="collapse"
-            data-target="#navbarCollapse"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div
-            className="collapse navbar-collapse justify-content-between"
-            id="navbarCollapse"
-          >
-            <div className="navbar-nav ml-auto p-4">
-              <a href="index.html" className="nav-item nav-link">
-                Home
-              </a>
-              <a href="about.html" className="nav-item nav-link">
-                About
-              </a>
-              <a href="service.html" className="nav-item nav-link active">
-                Service
-              </a>
-              <a href="menu.html" className="nav-item nav-link">
-                Menu
-              </a>
-              <div className="nav-item dropdown">
-                <a
-                  href="#"
-                  className="nav-link dropdown-toggle"
-                  data-toggle="dropdown"
-                >
-                  Pages
-                </a>
-                <div className="dropdown-menu text-capitalize">
-                  <a href="reservation.html" className="dropdown-item">
-                    Reservation
-                  </a>
-                  <a href="testimonial.html" className="dropdown-item">
-                    Testimonial
-                  </a>
-                </div>
-              </div>
-              <a href="contact.html" className="nav-item nav-link">
-                Contact
-              </a>
-            </div>
-          </div>
-        </nav>
-      </div>
-      {/* Navbar End */}
 
       {/* Page Header Start */}
       <div className="container-fluid page-header mb-5 position-relative overlay-bottom">
@@ -87,233 +63,94 @@ export default function Service() {
         <div className="container">
           <div className="section-title">
             <h4
-              className="text-primary text-uppercase"
-              style={{ letterSpacing: "5px" }}
+              className="text-uppercase"
+              style={{ letterSpacing: "5px", color: logoColor }}
             >
               Our Services
             </h4>
-            <h1 className="display-4">Fresh &amp; Organic Beans</h1>
+            <h1 className="display-4" style={{ color: logoColor }}>
+              What We Offer
+            </h1>
           </div>
           <div className="row">
-            <div className="col-lg-6 mb-5">
-              <div className="row align-items-center">
-                <div className="col-sm-5">
-                  <img
-                    className="img-fluid mb-3 mb-sm-0"
-                    src="img/service-1.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="col-sm-7">
-                  <h4>
-                    <i className="fa fa-truck service-icon"></i>
-                    Fastest Door Delivery
-                  </h4>
-                  <p className="m-0">
-                    Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea
-                    et et lorem dolor sed est sit invidunt, dolore tempor diam
-                    ipsum takima erat tempor
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-6 mb-5">
-              <div className="row align-items-center">
-                <div className="col-sm-5">
-                  <img
-                    className="img-fluid mb-3 mb-sm-0"
-                    src="img/service-2.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="col-sm-7">
-                  <h4>
-                    <i className="fa fa-coffee service-icon"></i>
-                    Fresh Coffee Beans
-                  </h4>
-                  <p className="m-0">
-                    Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea
-                    et et lorem dolor sed est sit invidunt, dolore tempor diam
-                    ipsum takima erat tempor
-                  </p>
+            {services.map((service, i) => (
+              <div className="col-lg-6 mb-5" key={i}>
+                <div className="row align-items-center">
+                  <div className="col-sm-5">
+                    <img
+                      className="img-fluid mb-3 mb-sm-0"
+                      src={service.img}
+                      alt={service.title}
+                      style={{
+                        borderRadius: "10px",
+                        objectFit: "cover",
+                        width: "100%",
+                        height: "220px",
+                      }}
+                    />
+                  </div>
+                  <div className="col-sm-7">
+                    <h4 style={{ color: logoColor }}>
+                      <i
+                        className={`fa ${service.icon} service-icon mr-2`}
+                        style={{ color: logoColor }}
+                      ></i>
+                      {service.title}
+                    </h4>
+                    <p className="m-0">{service.desc}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="col-lg-6 mb-5">
-              <div className="row align-items-center">
-                <div className="col-sm-5">
-                  <img
-                    className="img-fluid mb-3 mb-sm-0"
-                    src="img/service-3.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="col-sm-7">
-                  <h4>
-                    <i className="fa fa-award service-icon"></i>
-                    Best Quality Coffee
-                  </h4>
-                  <p className="m-0">
-                    Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea
-                    et et lorem dolor sed est sit invidunt, dolore tempor diam
-                    ipsum takima erat tempor
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-6 mb-5">
-              <div className="row align-items-center">
-                <div className="col-sm-5">
-                  <img
-                    className="img-fluid mb-3 mb-sm-0"
-                    src="img/service-4.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="col-sm-7">
-                  <h4>
-                    <i className="fa fa-table service-icon"></i>
-                    Online Table Booking
-                  </h4>
-                  <p className="m-0">
-                    Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea
-                    et et lorem dolor sed est sit invidunt, dolore tempor diam
-                    ipsum takima erat tempor
-                  </p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
       {/* Service End */}
 
-      {/* Footer Start */}
-      <div className="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top">
-        <div className="row mx-0 pt-5 px-sm-3 px-lg-5 mt-4">
-          <div className="col-lg-3 col-md-6 mb-5">
+      {/* Why Choose Us Start */}
+      <div className="container-fluid my-5 py-5 bg-light">
+        <div className="container">
+          <div className="section-title text-center mb-5">
             <h4
-              className="text-white text-uppercase mb-4"
-              style={{ letterSpacing: "3px" }}
+              className="text-uppercase"
+              style={{ letterSpacing: "5px", color: logoColor }}
             >
-              Get In Touch
+              Why Choose Makbel
             </h4>
-            <p>
-              <i className="fa fa-map-marker-alt mr-2"></i>123 Street, New York,
-              USA
-            </p>
-            <p>
-              <i className="fa fa-phone-alt mr-2"></i>+012 345 67890
-            </p>
-            <p className="m-0">
-              <i className="fa fa-envelope mr-2"></i>info@example.com
+            <h2 className="mb-4" style={{ color: logoColor }}>
+              Your Vision, Our Expertise
+            </h2>
+            <p className="lead">
+              We combine creativity, technical skill, and a passion for storytelling to deliver outstanding results for every client. Whether you need a commercial, music video, documentary, or post-production services, Makbel Film Production is your trusted partner from concept to screen.
             </p>
           </div>
-          <div className="col-lg-3 col-md-6 mb-5">
-            <h4
-              className="text-white text-uppercase mb-4"
-              style={{ letterSpacing: "3px" }}
-            >
-              Follow Us
-            </h4>
-            <p>
-              Amet elitr vero magna sed ipsum sit kasd sea elitr lorem rebum
-            </p>
-            <div className="d-flex justify-content-start">
-              <a
-                className="btn btn-lg btn-outline-light btn-lg-square mr-2"
-                href="#"
-              >
-                <i className="fab fa-twitter"></i>
-              </a>
-              <a
-                className="btn btn-lg btn-outline-light btn-lg-square mr-2"
-                href="#"
-              >
-                <i className="fab fa-facebook-f"></i>
-              </a>
-              <a
-                className="btn btn-lg btn-outline-light btn-lg-square mr-2"
-                href="#"
-              >
-                <i className="fab fa-linkedin-in"></i>
-              </a>
-              <a
-                className="btn btn-lg btn-outline-light btn-lg-square"
-                href="#"
-              >
-                <i className="fab fa-instagram"></i>
-              </a>
+          <div className="row text-center">
+            <div className="col-md-4 mb-4">
+              <i className="fa fa-users fa-3x mb-3" style={{ color: logoColor }}></i>
+              <h5 className="font-weight-bold" style={{ color: logoColor }}>Experienced Team</h5>
+              <p>Our crew brings decades of experience in film, TV, and digital content production.</p>
+            </div>
+            <div className="col-md-4 mb-4">
+              <i className="fa fa-lightbulb fa-3x mb-3" style={{ color: logoColor }}></i>
+              <h5 className="font-weight-bold" style={{ color: logoColor }}>Creative Approach</h5>
+              <p>We turn your ideas into visually stunning stories that engage and inspire audiences.</p>
+            </div>
+            <div className="col-md-4 mb-4">
+              <i className="fa fa-star fa-3x mb-3" style={{ color: logoColor }}></i>
+              <h5 className="font-weight-bold" style={{ color: logoColor }}>Quality Results</h5>
+              <p>We deliver high-quality productions on time and on budget, every time.</p>
             </div>
           </div>
-          <div className="col-lg-3 col-md-6 mb-5">
-            <h4
-              className="text-white text-uppercase mb-4"
-              style={{ letterSpacing: "3px" }}
-            >
-              Open Hours
-            </h4>
-            <div>
-              <h6 className="text-white text-uppercase">Monday - Friday</h6>
-              <p>8.00 AM - 8.00 PM</p>
-              <h6 className="text-white text-uppercase">Saturday - Sunday</h6>
-              <p>2.00 PM - 8.00 PM</p>
-            </div>
-          </div>
-          <div className="col-lg-3 col-md-6 mb-5">
-            <h4
-              className="text-white text-uppercase mb-4"
-              style={{ letterSpacing: "3px" }}
-            >
-              Newsletter
-            </h4>
-            <p>
-              Amet elitr vero magna sed ipsum sit kasd sea elitr lorem rebum
-            </p>
-            <div className="w-100">
-              <div className="input-group">
-                <input
-                  type="text"
-                  className="form-control border-light"
-                  style={{ padding: "25px" }}
-                  placeholder="Your Email"
-                />
-                <div className="input-group-append">
-                  <button className="btn btn-primary font-weight-bold px-3">
-                    Sign Up
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          className="container-fluid text-center text-white border-top mt-4 py-4 px-sm-3 px-md-5"
-          style={{ borderColor: "rgba(256, 256, 256, .1)" }}
-        >
-          <p className="mb-2 text-white">
-            Copyright &copy;{" "}
-            <a className="font-weight-bold" href="#">
-              Domain
-            </a>
-            . All Rights Reserved.
-          </p>
-          <p className="m-0 text-white">
-            Designed by{" "}
-            <a className="font-weight-bold" href="https://htmlcodex.com">
-              HTML Codex
-            </a>{" "}
-            Distributed by{" "}
-            <a href="https://themewagon.com" target="_blank" rel="noopener noreferrer">
-              ThemeWagon
-            </a>
-          </p>
         </div>
       </div>
-      {/* Footer End */}
+      {/* Why Choose Us End */}
 
       {/* Back to Top */}
-      <a href="#" className="btn btn-lg btn-primary btn-lg-square back-to-top">
+      <a
+        href="#"
+        className="btn btn-lg btn-primary btn-lg-square back-to-top"
+        style={{ background: logoColor, border: "none" }}
+      >
         <i className="fa fa-angle-double-up"></i>
       </a>
     </>
